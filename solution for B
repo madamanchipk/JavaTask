@@ -1,0 +1,55 @@
+Class Fish extends Animals implements swim() {
+    public void Swim(){
+      System.out.println("I am swimming");
+    }
+}
+
+Class Shark extends Fish() {
+  String size;
+  String colour;
+  public Shark(String S,String C) {
+    size = s;
+    colour = c;
+  }
+  
+  public void eat() {
+    System.out.println("I will eat fish");
+  }
+}
+
+Class Clownfish extends Fish() {
+  String size;
+  String colour;
+  public Clownfish(String S,String C) {
+    size = s;
+    colour = c;
+  }
+  
+  public void Makejokes() {
+  System.out.println("I will make jokes");
+  }
+}
+
+Class Dolphins implements Swim(){
+    public void Swim(){
+      System.out.println("I am swimming");
+    }
+}
+
+
+public class Solution {
+    public static void main(String[] args) {
+        
+        Fish Fish = new Fish();
+        Fish.Swim();
+        
+        Shark Shark = new Shark("large","grey");
+        Shark.eat();
+        
+        Clownfish Clownfish = new Clownfish("small","orange");
+        Clownfish.Makejokes();
+        
+        Dolphins Dolphins = new Dolphins();
+        Dolphins.Swim();
+    }
+}
