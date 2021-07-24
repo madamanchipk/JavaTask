@@ -47,10 +47,11 @@ public class Solution {
         bird.sing();
         
         Duck duck = new Duck();
-				duck.sing();
-		    duck.swim();
+	duck.sing();
+	duck.swim();
 
-		   Chicken chicken = new Chicken();
-		   chicken.walk();
-		   chicken.sing();
+	Chicken chicken = new Chicken();
+	chicken.walk();
+	chicken.sing();
+      }	
 }
