@@ -1,0 +1,30 @@
+class Bird{
+    public void sound(){
+        
+    }
+}
+
+class Parrot extends Bird{
+    String sound;
+    public Parrot(String sou){
+        sound=sou;
+    }
+    public void sound(){
+        System.out.println(sound);
+    }
+}
+
+
+public class Solution {
+    public static void main(String[] args) {
+        
+        Parrot ParrotWithDogs = new Parrot("Woof, woof"); //Parrot living near dogs
+       ParrotWithDogs.sound();
+            
+        Parrot ParrotWithCats = new Parrot("Me ow"); //Parrot living near cats
+        ParrotWithCats.sound();
+           
+        Parrot ParrotWithRos = new Parrot("Cock-a-doodle-doo"); //Parrot living near roster
+        ParrotWithRos.sound();
+    }
+}
