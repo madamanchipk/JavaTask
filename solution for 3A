@@ -1,0 +1,24 @@
+class Chicken extends Bird{
+    String sex;
+    public Parrot(String sex_){
+        sex=sex_;
+    }
+    public void Sing() {
+      if(sex == male)
+        System.out.println("Cock-a-doodle-doo");
+       else
+        System.out.println("Cluck, cluck");
+    }
+}
+
+
+public class Solution {
+    public static void main(String[] args) {
+        
+        Chicken Rooster = new Chicken("male");      
+        Rooster.Sing();
+            
+        Chicken Chicken = new Chicken("female");      
+        Chicken.Sing();
+    }
+}
