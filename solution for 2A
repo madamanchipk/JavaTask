@@ -1,1 +1,56 @@
+public abstract class Animal {
 
+}
+
+public interface Fly {
+  public void fly();
+}
+
+public interface Sing() {
+  public void sing();
+}
+
+public interface Walk() {
+  public void walk();
+}
+
+public class Bird extends Animal implements Sing, Walk {
+  public void sing() {
+    System.out.println("I am Singing");
+  }
+  
+  public void walk() {
+    System.out.println("I am Walking");
+  }
+}
+
+public class Duck extends Bird implements Swim() {
+  public void Sing(){
+    System.out.println("Quack , quack");
+  }
+  public void Swim() {
+    System.out.println("I am Swimming");
+  }
+}
+
+public class Chicken extends Bird() {
+  public void Sing(){
+    System.out.println("Cluck, cluck");
+  }
+}
+
+public class Solution {
+      public static void main(String[] args) {
+        Bird bird = new Bird();
+        bird.walk();
+        bird.fly();
+        bird.sing();
+        
+        Duck duck = new Duck();
+				duck.sing();
+		    duck.swim();
+
+		   Chicken chicken = new Chicken();
+		   chicken.walk();
+		   chicken.sing();
+}
