@@ -1,0 +1,22 @@
+public class Butteryfly extends Animal implements Fly {
+  public void Fly {
+    System.out.println("I am Flyning");
+  }
+}
+
+public class Caterpiller extends Animal implements Walk {
+  public void walk {
+    System.out.println("I am Waling");
+  }
+}
+
+public class solution {
+  public static void mail(String[] args) {
+  
+    Butteryfly Butteryfly = new Butteryfly();
+    Butteryfly.walk();
+    
+    Caterpiller Caterpiller = new Caterpiller();
+    Caterpiller.Fly();
+  }
+}
