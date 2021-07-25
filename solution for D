@@ -1,0 +1,262 @@
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+public abstract class Animal {
+	String name;
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public abstract boolean walk();
+	public abstract boolean fly();
+	public abstract boolean swim();
+	public abstract boolean sing();
+}
+
+public class Response {
+	private int count;
+	private ArrayList<String> names=new ArrayList<String>();
+	private String activity;
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public ArrayList<String> getNames() {
+		return names;
+	}
+
+	public String getActivity() {
+		return activity;
+	}
+
+	public void setActivity(String activity) {
+		this.activity = activity;
+	}
+
+	public void setNames(ArrayList<String> names) {
+		this.names = names;
+	}
+}
+
+@RestController
+public class AllAnimals {
+	
+	// I used this class for adding All Animals to Array
+	
+	@GetMapping("/animals/{activity}")
+	 public Response getAnimalsCanFly(@PathVariable(name="activity") String activity)
+	 {
+		 Response response= new Response();
+		 int count=0;
+		 ArrayList<String> names=null;
+		 List<Animal> allAnimals=null;
+		
+		if (activity.equalsIgnoreCase("fly")) {
+			response.setActivity(activity);
+			names = new ArrayList<String>();
+			allAnimals = this.AddAllAnimals();
+			for (Animal animal : allAnimals) {
+				if (animal.fly()) {
+					names.add(animal.name);
+					count++;
+				}
+				response.setCount(count);
+				response.setNames(names);
+			}
+		}
+		
+		if (activity.equalsIgnoreCase("walk")) {
+			response.setActivity(activity);
+			names = new ArrayList<String>();
+			allAnimals = this.AddAllAnimals();
+			for (Animal animal : allAnimals) {
+				if (animal.walk()) {
+					names.add(animal.name);
+					count++;
+				}
+				response.setCount(count);
+				response.setNames(names);
+			}
+		}
+		
+		if (activity.equalsIgnoreCase("sing")) {
+			response.setActivity(activity);
+			names = new ArrayList<String>();
+			allAnimals = this.AddAllAnimals();
+			for (Animal animal : allAnimals) {
+				if (animal.sing()) {
+					names.add(animal.name);
+					count++;
+				}
+				response.setCount(count);
+				response.setNames(names);
+			}
+		}
+		
+		if (activity.equalsIgnoreCase("swim")) {
+			response.setActivity(activity);
+			names = new ArrayList<String>();
+			allAnimals = this.AddAllAnimals();
+			for (Animal animal : allAnimals) {
+				if (animal.swim()) {
+					names.add(animal.name);
+					count++;
+				}
+				response.setCount(count);
+				response.setNames(names);
+			}
+		}
+		
+		 return response;
+	 }
+	
+	public List<Animal>  AddAllAnimals()
+	{
+		Animal bird=new Animal()
+		{
+			public boolean walk() {return true;}
+			public boolean fly() {return true;}
+			public boolean swim() {return false;}
+			public boolean sing() {return true;}
+		};
+		bird.setName("bird");
+		
+		Animal duck=new Animal()
+		{
+			public boolean walk() {return true;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		duck.setName("duck");
+		
+		Animal chicken=new Animal()
+		{
+			public boolean walk() {return true;}
+			public boolean fly() {return false;}
+			public boolean swim() {return false;}
+			public boolean sing() {return false;}
+		};
+		chicken.setName("chicken");
+		
+		Animal Rooster=new Animal()
+		{
+			public boolean walk() {return true;}
+			public boolean fly() {return false;}
+			public boolean swim() {return false;}
+			public boolean sing() {return false;}
+		};
+		Rooster.setName("Rooster");
+		
+		Animal parrot=new Animal()
+		{
+			public boolean walk() {return true;}
+			public boolean fly() {return true;}
+			public boolean swim() {return false;}
+			public boolean sing() {return true;}
+		};
+		parrot.setName("parrot");
+		
+		Animal Fish=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		Fish.setName("Fish");
+		
+		Animal shark=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		shark.setName("shark");
+		
+		Animal clownFish=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		clownFish.setName("clownFish");
+		
+		Animal dolphin=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		dolphin.setName("dolphin");
+		
+		Animal frog=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		frog.setName("frog");
+		
+		Animal dog=new Animal()
+		{
+			public boolean walk() {return true;}
+			public boolean fly() {return false;}
+			public boolean swim() {return true;}
+			public boolean sing() {return false;}
+		};
+		dog.setName("dog");
+		
+		Animal butterfly=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return true;}
+			public boolean swim() {return false;}
+			public boolean sing() {return false;}
+		};
+		butterfly.setName("butterfly");
+		
+		Animal cat=new Animal()
+		{
+			public boolean walk() {return false;}
+			public boolean fly() {return true;}
+			public boolean swim() {return false;}
+			public boolean sing() {return false;}
+		};
+		cat.setName("cat");
+		
+		List<Animal> animals=new ArrayList<Animal>();;
+		
+		animals.add(bird);
+		animals.add(duck);
+		animals.add(chicken);
+		animals.add(Rooster);
+		animals.add(parrot);
+		animals.add(Fish);
+		animals.add(shark);
+		animals.add(clownFish);
+		animals.add(dolphin);
+		animals.add(frog);
+		animals.add(dog);
+		animals.add(butterfly);
+		animals.add(cat);
+	return animals;
+	}
+	
+	public static void main(String[] args) {
+		AllAnimals aa=new AllAnimals();
+		aa.AddAllAnimals();
+	}
+}
